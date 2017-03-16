@@ -45,7 +45,7 @@ public class JavaFXLife extends Application {
         borderPane.setBottom(lbStatus);
 
         Scene scene = new Scene(borderPane, 800, 500);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("JavaFXLife");
         primaryStage.setScene(scene);
 
 //        primaryStage.setMaximized(true);
