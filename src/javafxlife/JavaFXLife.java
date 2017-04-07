@@ -166,6 +166,10 @@ public class JavaFXLife extends Application {
         color.setAccelerator(KeyCombination.keyCombination("Ctrl+C"));
         color.setOnAction(e -> lifePane.setShowColors(color.isSelected()));
         optionsMenu.getItems().add(color);
+        
+        CheckMenuItem blue = new CheckMenuItem("Color Blue");
+        blue.setOnAction(e -> lifePane.thisBlue());
+        optionsMenu.getItems().add(blue);
 
         /**
          * *********************************************************************
@@ -179,7 +183,17 @@ public class JavaFXLife extends Application {
             readFile(new File("jp.txt"));
             lifePane.drawCells();
         });
-        helpMenu.getItems().add(jp);        
+        helpMenu.getItems().add(jp);
+
+        MenuItem jw = new MenuItem("JW");
+        jw.setOnAction(e -> {
+            lifePane.pause();
+            lifePane.clearCells();
+            readFile(new File("jw.txt"));
+            lifePane.drawCells();
+        });
+        helpMenu.getItems().add(jw);
+          
         
         MenuItem acorn = new MenuItem("Acorn");
         acorn.setOnAction(e -> {

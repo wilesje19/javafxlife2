@@ -38,6 +38,7 @@ public class LifePane extends Pane {
     private int xCellCount = 100;
     private int yCellCount = 100;
     private boolean showColors = false;
+    private boolean showBlue = false;
     private int iteration = 0;
     private final Label lbStatus;
     private final Canvas canvas;
@@ -173,7 +174,11 @@ public class LifePane extends Pane {
                         int myRed = gen.nextInt(255);
                         Color myColor = Color.rgb(myRed, myGreen, myBlue);
                         g.setFill(myColor);
-                    } else {
+                    }
+                    else if (showBlue){
+                        g.setFill(Color.BLUE);
+                    } 
+                       else {
                         g.setFill(Color.BLACK);
                     }
                 }
@@ -242,5 +247,9 @@ public class LifePane extends Pane {
 
     public boolean getShowColors() {
         return this.showColors;
+    }
+    
+    public void thisBlue() {
+        showBlue = !showBlue;
     }
 }
